@@ -18,6 +18,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/posts/create', [PostController::class, 'create']);
+
+Route::post('/posts/store', [PostController::class, 'store'])->name('posts.store');
+
 Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
 
 Route::get('/posts/{id}', [PostController::class, 'show']);
+
